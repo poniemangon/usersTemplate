@@ -1,8 +1,29 @@
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+const path = require('path');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
-app.use(express.json());
+app.use(session({
+    secret: 'gonpo',
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
+
+
+
+// setuser
+
+const setUser = require('./middlewares/setUser');
+app.use(setUser);
+
+
 
 
 
@@ -18,5 +39,5 @@ const mainRoutes = require('./routes/mainRoutes');
 app.use('/', mainRoutes);
 
 const userRoutes = require('./routes/userRoutes');
-app.use('/users', userRoutes);
+app.use('/', userRoutes);
 
