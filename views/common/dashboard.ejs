@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/partials/dashboard.css" rel="stylesheet" />
+</head>
+<body>
+    <main>
+    <div class="padre">
+        <div class="dashboard">
+            <% if(user){ %>
+            <div class="userinfo">
+                <p> Bienvenido </p>
+                <p><b><%= user.username %></b></p>
+            </div>
+            <% } else { %>
+            <div class="userinfo">
+                <p><a href="/login">Loguearse</a></p>
+                <p><a href="/register">Registrarse</a></p>
+            <% } %>
+            </div>
+        </div>
+        <div class="contenido">
+
+        </div>
+    </div>
+    </main>     
+</body>
+</html>

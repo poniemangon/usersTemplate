@@ -1,0 +1,12 @@
+.padre {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dashboard {
+    width: 25%;
+    background-color: rgb(15, 15, 74);
+    border: 1px solid;
+}
+
