@@ -31,7 +31,7 @@ const controller = {
         
   },
     store: (req, res) => {
-       
+          console.log('req:', req)
           // hash the password
           const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     
@@ -40,8 +40,8 @@ const controller = {
             id: Number(users.length > 0 ? users[users.length - 1].id + 1 : 1),
             username: req.body.username,
             password: hashedPassword,
-            // name: req.body.name,
-            // mail: req.body.mail
+            name: req.body.name,
+            mail: req.body.mail
           };
           console.log(user);
           // store user object in array
@@ -54,7 +54,7 @@ const controller = {
       },
       logout: (req, res) => {
         req.session.destroy();
-        res.redirect('/login');
+          ``
       }
 };
 

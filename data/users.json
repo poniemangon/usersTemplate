@@ -1,3 +1,14 @@
 [
-  
+  {
+    "id": 1,
+    "username": "Gonzalo",
+    "password": "$2b$10$7ekx2RHD4dZihAWchVk43O0.TqALMnC2WSaungItxyVcxD1ieyM8W"
+  },
+  {
+    "id": 2,
+    "username": "Dalmi",
+    "password": "$2b$10$0x70gRsPn7TaXoTnUJrjn.bWJSwM8hQWaAPa87kLWguX6oQsVgyC6",
+    "name": "Dalmax",
+    "mail": "mail@mail.com"
+  }
 ]
