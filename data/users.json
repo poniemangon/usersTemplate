@@ -1,14 +1,16 @@
 [
   {
     "id": 1,
-    "username": "Gonzalo",
-    "password": "$2b$10$7ekx2RHD4dZihAWchVk43O0.TqALMnC2WSaungItxyVcxD1ieyM8W"
+    "username": "gon_14",
+    "password": "$2b$10$oLV9O6XjWboyPOoJymdAZuWpxSz1VWE0Rt8y97DV4PSLgIkIqGw6W",
+    "name": "Gonzalo",
+    "mail": "poniemangon@gmail.com"
   },
   {
     "id": 2,
-    "username": "Dalmi",
-    "password": "$2b$10$0x70gRsPn7TaXoTnUJrjn.bWJSwM8hQWaAPa87kLWguX6oQsVgyC6",
-    "name": "Dalmax",
-    "mail": "mail@mail.com"
+    "username": "marceklio",
+    "password": "$2b$10$tI0FOuV3/Z4FsBAZCVAokuQ3ere1.HuZFbr1zKtNv979bQZIZmObi",
+    "name": "Marcela Klionski",
+    "mail": "mklionski@gmail.com"
   }
 ]

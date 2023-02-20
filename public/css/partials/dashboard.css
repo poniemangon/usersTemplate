@@ -53,23 +53,39 @@ body {
    color: white;
 }
 
-.dashboard .dashboard-nav .d{
+ .d{
     height: 100%;
     color: white;
     padding: 2%;
 }
-.dashboard .dashboard-nav .d p{
-    
-}
 
-.dashboard .dashboard-nav .d:hover {
+
+.d:hover {
     transition: 200ms;
     background-color: rgb(23, 23, 87);
+
+ }
+ .d-radius{
+    height: 100%;
+    color: white;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+
+.d-radius:hover {
+    transition: 200ms;
+    background-color: rgb(23, 23, 87);
+
  }
 
- .thingy {
-    height: 200px;
- }
+.invisible{
+    height: 300px;
+    width: 100%;
+}
+
+
+
 
  .padre .content {
     width: 85%;

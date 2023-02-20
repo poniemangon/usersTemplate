@@ -1,0 +1,21 @@
+<%- include('./common/dashboard') %>
+
+<div class="content">
+    <div class="person">
+        <% if (userFound) { %>
+        <p>Viendo el perfil de</p>
+        <p><b><%= userFound.name %></b></p>
+        <p><b><%= userFound.mail %></b></p>
+        <% } else { %>
+        <p> <a href="/register">Registrate</a> no seas bostero</p>
+        <% }  %>
+
+    </div>
+
+</div>
+
+</div>
+</main>
+</body>
+
+</html>

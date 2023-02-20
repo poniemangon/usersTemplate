@@ -14,6 +14,8 @@ router.post('/', usersController.store);
 router.get('/login', usersController.login); 
 router.post('/login', usersController.loginProcess);
 router.get('/logout', usersController.logout);
+router.get('/:id', usersController.getUser);
+router.get('/404', usersController.getUser);
 
 
 

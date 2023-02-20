@@ -7,6 +7,9 @@ const bcrypt = require("bcrypt");
 
 const controller = {
     register: (req, res)=>{
+    res.render('register');
+    },  
+    register: (req, res)=>{
         res.render('register');
     },
     login: (req, res)=>{
@@ -27,6 +30,7 @@ const controller = {
       });
     },
     indexUser: (req, res) => {
+      
       return res.render('header', {user: req.session.userLogged});
         
   },
@@ -43,7 +47,6 @@ const controller = {
             name: req.body.name,
             mail: req.body.mail
           };
-          console.log(user);
           // store user object in array
           users.push(user);
     
@@ -55,6 +58,18 @@ const controller = {
       logout: (req, res) => {
         req.session.destroy();
           ``
+        return res.redirect('/');
+      },
+      getUser: (req, res) => {
+        const userFound = users.find(user => user.id == req.params.id);
+        if (userFound) {
+          console.log(userFound.id);
+          console.log(req.session.user.id)
+          return res.render('profile', {userFound});
+        }
+        else {
+          return res.render('404');
+        }
       }
 };
 
@@ -67,5 +82,7 @@ function findByField(field, text){
   let userFound = users.find(user => user[field] === text);
   return userFound;
 }
+
+
 
 module.exports = controller;
