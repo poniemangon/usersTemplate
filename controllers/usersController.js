@@ -40,8 +40,10 @@ const controller = {
             id: Number(users.length > 0 ? users[users.length - 1].id + 1 : 1),
             username: req.body.username,
             password: hashedPassword,
+            // name: req.body.name,
+            // mail: req.body.mail
           };
-    
+          console.log(user);
           // store user object in array
           users.push(user);
     

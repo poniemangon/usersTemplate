@@ -1,10 +1,31 @@
-<%- include('./common/header') %>
-<body>
-    
-    <form action="/" method="POST" enctype="">
-        username<input type="text" id="username" name="username">
-        password<input type="password" id="password" name="password">
-        <button><input type="submit"></button>
+<%- include('./common/dashboard') %>
+
+
+  <div class="formLog">
+
+    <form method="POST" action="/login">
+      <% if (locals.errors) { %>
+        <p>
+          <% errors %>
+        </p>
+        <% } %>
+          <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+
+          <div>
+            <button type="submit">Register</button>
+          </div>
     </form>
+  </div>
+
+</div>
+</main>
 </body>
+
 </html>

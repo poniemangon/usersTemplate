@@ -1,2 +1,19 @@
 <%- include('./common/dashboard') %>
 
+<div class="content">
+    <div class="person">
+        <% if (user) { %>
+        <p> Bienvenido </p>
+        <p><b><%= user.username %></b></p>
+        <% } else { %>
+        <p> Registrate no seas bostero</p>
+        <% }  %>
+    </div>
+
+</div>
+
+</div>
+</main>
+</body>
+
+</html>

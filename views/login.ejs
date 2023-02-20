@@ -1,24 +1,31 @@
-<%- include('./common/header') %>
-<body>
+<%- include('./common/dashboard') %>
 
+  <div class="formLog">
+    <a href="/register">No bitches? Register</a>
     <form method="POST" action="/login">
       <% if (locals.errors) { %>
         <p>
-        <% errors %>
-      </p>
-      <% } %>
-        <div>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
-    
-</body>
-</html>
+          <% errors %>
+        </p>
+        <% } %>
+          <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
+    </form>
+  </div>
+
+  </div>
+
+  </div>
+  </main>
+  </body>
+
+  </html>

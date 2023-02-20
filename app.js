@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret: 'gonpo',

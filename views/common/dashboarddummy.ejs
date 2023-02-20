@@ -18,32 +18,20 @@
                     <div class="pic"></div>
                 </div>
                 <div class="welcome">
-                    <% if (user) { %>
                     <p> Bienvenido </p>
-                    <p><b><%= user.username %></b></p>
-                    <% } else { %>
-                    <p> Registrate biorsi </p>
-                    <% } %>
+                    <p><b>John Doe</b></p>
                 </div>
 
                 <div class="dashboard-nav">
-                    <a href="/"><div class="d"> <p>Home</p> </div></a> 
-                    <% if (user) { %>
+                    <div class="d"><p>Home</p> </div>
                     <div class="d"> <p>Profile</p> </div>
-                    <% } else { %>
-                   <a href="/login"><div class="d"> <p>Login</p> </div></a> 
-                   <% }  %>
-
 
 
                 </div>
-                <div class="thingy">
-                    <% if (user) {%>
-                    <a href="/logout"><div class="d"> <p>Logout</p> </div></a> 
-                    <% } else {}%>
-                </div>
+                <div class="thingy"></div>
 
 
             </div>
 
-            
+
+
