@@ -2,13 +2,17 @@
 
 <div class="content">
     <div class="person">
-        <% if (userFound) { %>
+        <% if (user && user.username == userFound.username) { %>
+            <p>Estas en tu perfil</p>
+
+            <% } else { %>
         <p>Viendo el perfil de</p>
+        <% }  %>
         <p><b><%= userFound.name %></b></p>
         <p><b><%= userFound.mail %></b></p>
-        <% } else { %>
-        <p> <a href="/register">Registrate</a> no seas bostero</p>
-        <% }  %>
+       
+        
+
 
     </div>
 

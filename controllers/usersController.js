@@ -58,13 +58,12 @@ const controller = {
       logout: (req, res) => {
         req.session.destroy();
           ``
-        return res.redirect('/');
+        return res.redirect('back');
       },
       getUser: (req, res) => {
         const userFound = users.find(user => user.id == req.params.id);
         if (userFound) {
           console.log(userFound.id);
-          console.log(req.session.user.id)
           return res.render('profile', {userFound});
         }
         else {
