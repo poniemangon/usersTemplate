@@ -3,7 +3,7 @@
 
   <div class="formLog">
 
-    <form method="POST" action="/">
+    <form method="POST" action="/" enctype="multipart/form-data">
       <% if (locals.errors) { %>
         <p>
           <% errors %>
@@ -24,6 +24,10 @@
           <div>
             <label for="mail">Email</label>
             <input type="text" id="mail" name="mail" required>
+          </div>
+          <div>
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" required>
           </div>
 
           <div>

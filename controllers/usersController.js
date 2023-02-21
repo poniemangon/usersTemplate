@@ -5,6 +5,7 @@ const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require("bcrypt");
 
 
+
 const controller = {
     register: (req, res)=>{
     res.render('register');
@@ -45,7 +46,8 @@ const controller = {
             username: req.body.username,
             password: hashedPassword,
             name: req.body.name,
-            mail: req.body.mail
+            mail: req.body.mail,
+            image: req.file?.filename ? req.file.filename : "default-image.png",
           };
           const usernameFound = users.find(test => test.username == user.username);
           const mailFound = users.find(test => test.mail == user.mail);
