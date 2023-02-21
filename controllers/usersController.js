@@ -3,6 +3,8 @@ const path = require("path");
 const usersPath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require("bcrypt");
+const multer = require('multer');
+const upload = multer({ dest: 'public/images/userimages' });
 
 
 
@@ -47,7 +49,6 @@ const controller = {
             password: hashedPassword,
             name: req.body.name,
             mail: req.body.mail,
-            image: req.file?.filename ? req.file.filename : "default-image.png",
           };
           const usernameFound = users.find(test => test.username == user.username);
           const mailFound = users.find(test => test.mail == user.mail);

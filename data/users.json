@@ -19,5 +19,12 @@
     "password": "$2b$10$IZBnE5gB8yKKOlQcG10.MOSh3RSQzOZnY0VEIiYtdxrwo91fBuYFm",
     "name": "Gonzalo ",
     "mail": "poniemangon24@gmail.com"
+  },
+  {
+    "id": 4,
+    "username": "Marge",
+    "password": "$2b$10$zQbgPD.M/ZuekOXFAECP1udx90um2ndvNeAuIn1aTxFN/GGcfOWli",
+    "name": "Marge Simpson",
+    "mail": "Marge@gmail.com"
   }
 ]
