@@ -12,5 +12,12 @@
     "password": "$2b$10$tI0FOuV3/Z4FsBAZCVAokuQ3ere1.HuZFbr1zKtNv979bQZIZmObi",
     "name": "Marcela Klionski",
     "mail": "mklionski@gmail.com"
+  },
+  {
+    "id": 3,
+    "username": "gon_145",
+    "password": "$2b$10$IZBnE5gB8yKKOlQcG10.MOSh3RSQzOZnY0VEIiYtdxrwo91fBuYFm",
+    "name": "Gonzalo ",
+    "mail": "poniemangon24@gmail.com"
   }
 ]

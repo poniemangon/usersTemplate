@@ -47,13 +47,20 @@ const controller = {
             name: req.body.name,
             mail: req.body.mail
           };
+          const usernameFound = users.find(test => test.username == user.username);
+          const mailFound = users.find(test => test.mail == user.mail);
           // store user object in array
+          if (mailFound || usernameFound){
+            return res.redirect('back');
+          }
+          else {
           users.push(user);
     
           // overwrite JSON file with new users array
           fs.writeFileSync(usersPath, JSON.stringify(users, null, 2));
     
-          return res.redirect("/");
+          return res.redirect("/")
+          };
       },
       logout: (req, res) => {
         req.session.destroy();
