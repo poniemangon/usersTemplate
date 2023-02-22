@@ -88,11 +88,23 @@ const controller = {
       },
       updateImage: (req, res) => {
         const id = req.params.id;
-        const user = users.find(user => user.id == id);
-        user.image = req.file.filename;
-        guardarUser(user);
-        return res.redirect("/products");
+        const userBuscado = users.find(userBuscado => userBuscado.id == id);
+        if (userBuscado.image !== 'default.jpg') {
+          const imagePath = path.join(__dirname, '../public/images/userimages', userBuscado.image);
+          fs.unlink(imagePath, (err) => {
+            if (err) console.error(err);
+          });
+        }
+        userBuscado.image = req.file.filename;
+        guardarUser(userBuscado);
+        req.session.userLogged.image = userBuscado.image;
+        
+        
+        return res.redirect("/");
       },
+      mySession: (req, res) => {
+        console.log(req.session.userLogged);
+      }
 };
 
 function findByID(id) {
@@ -104,9 +116,14 @@ function findByField(field, text){
   let userFound = users.find(user => user[field] === text);
   return userFound;
 };
+
+function getUsersList(path) {
+	return JSON.parse(fs.readFileSync(path, 'utf-8'));
+}
+
 function guardarUser(userToStore) {
 
-	const users = getUsersList(usersFilePath);
+	const users = getUsersList(usersPath);
 
 	const usersList = users.map(usuario => {
 		if(usuario.id == userToStore.id) {
@@ -116,7 +133,7 @@ function guardarUser(userToStore) {
 		
 	});
 
-	fs.writeFileSync(usersFilePath, JSON.stringify(usersList, null, 2));
+	fs.writeFileSync(usersPath, JSON.stringify(usersList, null, 2));
 }
 
 

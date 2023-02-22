@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const multer = require('multer');
+const path = require('path');
 
 // multer
 
@@ -30,7 +31,7 @@ router.get('/logout', usersController.logout);
 router.get('/:id', usersController.getUser);
 router.get('/404', usersController.getUser);
 router.get('/image/:id', usersController.editImage);
-router.put('/image/:id', upload.single("user_image"), usersController.updateImage); 
+router.put('/image/:id', upload.single("user_image"), usersController.updateImage, usersController.mySession)
 
 
 

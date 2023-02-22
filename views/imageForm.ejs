@@ -1,16 +1,18 @@
 <%- include('./common/dashboard') %>
 
-
+  <% if(user && user.id == picUser.id){ %>
   <div class="formLog">
-    <form action="/image/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/image/<%= picUser.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
       <div>
-        <label for="image">Profile Image:</label>
-        <input type="file" id="image" name="image" accept="image/*">
+        <label for="user_image">Profile Image:</label>
+        <input type="file" id="user_image" name="user_image" accept="image/*">
       </div>
       <button type="submit">Upload</button>
     </form>
     </form>
   </div>
+  <% } %>
+  
 
 </div>
 </main>

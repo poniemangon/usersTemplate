@@ -5,6 +5,14 @@
     "password": "$2b$10$Py2tleqvNA.iHa3ENjt6I.40F2NaAL1bxCR80WBb2iX7L5eyIoOX2",
     "name": "Gonzalo ",
     "mail": "poniemangon@gmail.com",
-    "image": "default.jpg"
+    "image": "user_image-1677082152918-176318968.png"
+  },
+  {
+    "id": 2,
+    "username": "Dummy",
+    "password": "$2b$10$1a3./hJHL6tV7A6zpZUdgOQ/4y8oJUgGYILgcmU33T4FNz99ZwMBa",
+    "name": "AAA",
+    "mail": "AAA@gmail.com",
+    "image": "user_image-1677084727450-828993780.png"
   }
 ]

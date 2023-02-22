@@ -38,6 +38,7 @@ body {
 .eldibu .pic .imagen {
     height: 100%;
     border-radius: 100%;
+    
 }
 .dashboard .welcome {
     color: white;
@@ -47,10 +48,13 @@ body {
     border: 1px solid;
     height: 100px;
     width: 100px;
-    color: white;
+
     border-radius: 100%;
     background-color: white;
     margin-top: 5%;
+    justify-content: center;
+    display: flex;
+    
     
 }
 
