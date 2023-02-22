@@ -12,27 +12,43 @@
 <body>
     <main>
         <div class="padre">
-            
+
             <div class="dashboard">
                 <div class="eldibu">
-                    <div class="pic"></div>
+                    <div class="pic">
+                        <% if (user) { %><img src="/images/userimages/<%= user.image %>" class="imagen" alt=""><% } %>
+                    </div>
                 </div>
                 <div class="welcome">
                     <% if (user) { %>
-                    <p> Bienvenido </p>
-                    <p><b><%= user.username %></b></p>
-                    <% } else { %>
-                    <p> Registrate </p>
-                    <% } %>
+                        <p> Bienvenido </p>
+                        <p><b>
+                                <%= user.username %>
+                            </b></p>
+                        <% } else { %>
+                            <p> Registrate </p>
+                            <% } %>
                 </div>
 
                 <div class="dashboard-nav">
-                    <a href="/"><div class="d"> <p>Home</p> </div></a> 
+                    <a href="/">
+                        <div class="d">
+                            <p>Home</p>
+                        </div>
+                    </a>
                     <% if (user) { %>
-                        <a href="/<%= user.id %>"><div class="d"> <p>Profile</p> </div></a> 
-                    <% } else { %>
-                   <a href="/login"><div class="d"> <p>Login</p> </div></a> 
-                   <% }  %>
+                        <a href="/<%= user.id %>">
+                            <div class="d">
+                                <p>Profile</p>
+                            </div>
+                        </a>
+                        <% } else { %>
+                            <a href="/login">
+                                <div class="d">
+                                    <p>Login</p>
+                                </div>
+                            </a>
+                            <% } %>
 
 
 
@@ -40,11 +56,13 @@
                 <div class="invisible"></div>
                 <div class="logout">
                     <% if (user) {%>
-                    <a href="/logout"><div class="d-radius"> <p>Logout</p> </div></a> 
-                    <% } else {}%>
+                        <a href="/logout">
+                            <div class="d-radius">
+                                <p>Logout</p>
+                            </div>
+                        </a>
+                        <% } else {}%>
                 </div>
 
 
             </div>
-
-

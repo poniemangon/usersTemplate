@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const methodOverride =  require('method-override'); 
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({

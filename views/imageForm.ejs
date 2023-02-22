@@ -1,0 +1,19 @@
+<%- include('./common/dashboard') %>
+
+
+  <div class="formLog">
+    <form action="/image/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div>
+        <label for="image">Profile Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+    </form>
+  </div>
+
+</div>
+</main>
+</body>
+
+</html>

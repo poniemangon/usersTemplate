@@ -49,6 +49,7 @@ const controller = {
             password: hashedPassword,
             name: req.body.name,
             mail: req.body.mail,
+            image: 'default.jpg'
           };
           const usernameFound = users.find(test => test.username == user.username);
           const mailFound = users.find(test => test.mail == user.mail);
@@ -79,7 +80,19 @@ const controller = {
         else {
           return res.render('404');
         }
-      }
+      },
+      editImage: (req, res) => {
+        const id = req.params.id;
+        const picUser = users.find(picUser => picUser.id == id);
+        return res.render("imageForm", { picUser });
+      },
+      updateImage: (req, res) => {
+        const id = req.params.id;
+        const user = users.find(user => user.id == id);
+        user.image = req.file.filename;
+        guardarUser(user);
+        return res.redirect("/products");
+      },
 };
 
 function findByID(id) {
@@ -90,6 +103,20 @@ function findByID(id) {
 function findByField(field, text){
   let userFound = users.find(user => user[field] === text);
   return userFound;
+};
+function guardarUser(userToStore) {
+
+	const users = getUsersList(usersFilePath);
+
+	const usersList = users.map(usuario => {
+		if(usuario.id == userToStore.id) {
+			return userToStore;
+		}
+		return usuario;
+		
+	});
+
+	fs.writeFileSync(usersFilePath, JSON.stringify(usersList, null, 2));
 }
 
 

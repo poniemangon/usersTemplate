@@ -2,29 +2,9 @@
   {
     "id": 1,
     "username": "gon_14",
-    "password": "$2b$10$oLV9O6XjWboyPOoJymdAZuWpxSz1VWE0Rt8y97DV4PSLgIkIqGw6W",
-    "name": "Gonzalo",
-    "mail": "poniemangon@gmail.com"
-  },
-  {
-    "id": 2,
-    "username": "marceklio",
-    "password": "$2b$10$tI0FOuV3/Z4FsBAZCVAokuQ3ere1.HuZFbr1zKtNv979bQZIZmObi",
-    "name": "Marcela Klionski",
-    "mail": "mklionski@gmail.com"
-  },
-  {
-    "id": 3,
-    "username": "gon_145",
-    "password": "$2b$10$IZBnE5gB8yKKOlQcG10.MOSh3RSQzOZnY0VEIiYtdxrwo91fBuYFm",
+    "password": "$2b$10$Py2tleqvNA.iHa3ENjt6I.40F2NaAL1bxCR80WBb2iX7L5eyIoOX2",
     "name": "Gonzalo ",
-    "mail": "poniemangon24@gmail.com"
-  },
-  {
-    "id": 4,
-    "username": "Marge",
-    "password": "$2b$10$zQbgPD.M/ZuekOXFAECP1udx90um2ndvNeAuIn1aTxFN/GGcfOWli",
-    "name": "Marge Simpson",
-    "mail": "Marge@gmail.com"
+    "mail": "poniemangon@gmail.com",
+    "image": "default.jpg"
   }
 ]
