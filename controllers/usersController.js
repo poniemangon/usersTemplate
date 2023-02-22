@@ -89,6 +89,7 @@ const controller = {
       updateImage: (req, res) => {
         const id = req.params.id;
         const userBuscado = users.find(userBuscado => userBuscado.id == id);
+        if (req.file) {
         if (userBuscado.image !== 'default.jpg') {
           const imagePath = path.join(__dirname, '../public/images/userimages', userBuscado.image);
           fs.unlink(imagePath, (err) => {
@@ -100,7 +101,8 @@ const controller = {
         req.session.userLogged.image = userBuscado.image;
         
         
-        return res.redirect("/");
+        return res.redirect("/");}
+        else {return res.redirect('back');}
       },
       mySession: (req, res) => {
         console.log(req.session.userLogged);
