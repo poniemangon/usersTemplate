@@ -4,6 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const multer = require('multer');
 const path = require('path');
+const setUser = require('../middlewares/setUser');
 
 // multer
 
@@ -30,7 +31,7 @@ router.post('/login', usersController.loginProcess);
 router.get('/logout', usersController.logout);
 router.get('/:id', usersController.getUser);
 router.get('/404', usersController.getUser);
-router.get('/image/:id', usersController.editImage);
+router.get('/image/:id', usersController.editImage, setUser);
 router.put('/image/:id', upload.single("user_image"), usersController.updateImage, usersController.mySession)
 
 

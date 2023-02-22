@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 const setUser = require('./middlewares/setUser');
 app.use(setUser);
 
-
+app.locals.baseUrl = "http://localhost:3000";
 
 
 

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/css/partials/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <body>
@@ -15,12 +16,21 @@
 
             <div class="dashboard">
                 <div class="eldibu">
-                    <% if (user) { %><a href="/image/<%= user.id %>"><% } %>
-                    <div class="pic">
-                        <div class="hovereado"><p>Cambiar</p></div>
-                        <% if (user) { %>  <div class="imagenUser"><img src="/images/userimages/<%= user.image %>" class="imagen" alt=""></div><% } %>
-                    </div>
-                    </a>
+                    <% if (user) { %><a href="/image/<%= user.id %>">%>
+                            <div class="pic">
+                                <div class="hovereado">
+                                    <p><i class="fa-solid fa-camera"></i></p>
+                                </div>
+                                <% if (user) { %>
+                                    <div class="imagenUser"><img src="<%= baseUrl %>/images/userimages/<%= user.image %>"
+                                            class="imagen" alt=""></div>
+                                    <% } %>
+                            </div>
+                        </a>
+                        <% } else {%>
+                            <div class="pic"></div>
+                            <% } %>
+
                 </div>
                 <div class="welcome">
                     <% if (user) { %>
