@@ -25,8 +25,8 @@ app.use(bodyParser.json());
 
 const setUser = require('./middlewares/setUser');
 app.use(setUser);
-
-app.locals.baseUrl = "http://localhost:3000";
+const imagePath = ('/images/userimages');
+app.locals.imagePath = imagePath;
 
 
 
