@@ -14,5 +14,13 @@
     "name": "AAA",
     "mail": "AAA@gmail.com",
     "image": "user_image-1677091088558-900087403.png"
+  },
+  {
+    "id": 3,
+    "username": "abc123",
+    "password": "$2b$10$DxBx4xlYuDLMJnswgRLYoOYqocBdfaJUOcbrwRrFxiEv95UbkU43K",
+    "name": "abc 123",
+    "mail": "abc@123.com",
+    "image": "default.jpg"
   }
 ]
