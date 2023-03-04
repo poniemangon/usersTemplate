@@ -5,6 +5,7 @@ const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require("bcrypt");
 const multer = require('multer');
 const upload = multer({ dest: 'public/images/userimages' });
+const User = require('../models/User');
 
 
 
@@ -40,39 +41,30 @@ const controller = {
     store: (req, res) => {
           console.log('req:', req)
           // hash the password
-          const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-    
+          
+          const userData = req.body;
           // create user object
-          const user = {
-            id: Number(users.length > 0 ? users[users.length - 1].id + 1 : 1),
-            username: req.body.username,
-            password: hashedPassword,
-            name: req.body.name,
-            mail: req.body.mail,
-            image: 'default.jpg'
-          };
-          const usernameFound = users.find(test => test.username == user.username);
-          const mailFound = users.find(test => test.mail == user.mail);
-          // store user object in array
-          if (mailFound || usernameFound){
-            return res.redirect('back');
+          const result = User.create(userData);
+          if (result == 'yes'){
+            return res.redirect('/');
           }
           else {
-          users.push(user);
+            return res.redirect('back');
+          }
     
-          // overwrite JSON file with new users array
-          fs.writeFileSync(usersPath, JSON.stringify(users, null, 2));
+
     
-          return res.redirect("/")
-          };
-      },
+          
+          },
+      
       logout: (req, res) => {
         req.session.destroy();
           ``
         return res.redirect('back');
       },
       getUser: (req, res) => {
-        const userFound = users.find(user => user.id == req.params.id);
+        const id = req.params.id;
+        const userFound = User.getUser(id);
         if (userFound) {
           console.log(userFound.id);
           return res.render('profile', {userFound});
@@ -83,39 +75,33 @@ const controller = {
       },
       editImage: (req, res) => {
         const id = req.params.id;
-        const picUser = users.find(picUser => picUser.id == id);
+        const picUser = User.editImage(id);
         return res.render("imageForm", { picUser });
       },
       updateImage: (req, res) => {
         const id = req.params.id;
-        const userBuscado = users.find(userBuscado => userBuscado.id == id);
-        if (req.file) {
-        if (userBuscado.image !== 'default.jpg') {
-          const imagePath = path.join(__dirname, '../public/images/userimages', userBuscado.image);
-          fs.unlink(imagePath, (err) => {
-            if (err) console.error(err);
-          });
-        }
-        userBuscado.image = req.file.filename;
-        guardarUser(userBuscado);
-        req.session.userLogged.image = userBuscado.image;
         
+        if (req.file) {
+        const imagen = req.file.filename;
+        User.updateImage(id, imagen);
+        const userBuscado = User.getUser(id);
+        req.session.userLogged.image = userBuscado.image;
         
         return res.redirect("/");}
         else {return res.redirect('back');}
       },
       mySession: (req, res) => {
-        console.log(req.session.userLogged);
+        
       }
 };
 
 function findByID(id) {
-  let userFound = users.find(user => user.id === id);
+  let userFound = User.findAll().find(user => user.id === id);
   return userFound;
 };
 
 function findByField(field, text){
-  let userFound = users.find(user => user[field] === text);
+  let userFound = User.findAll().find(user => user[field] === text);
   return userFound;
 };
 

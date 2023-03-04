@@ -30,7 +30,11 @@ app.locals.imagePath = imagePath;
 
 
 
-app.listen(3000);
+server = app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+  });
+  
+
 
 // views path y viewengine
 

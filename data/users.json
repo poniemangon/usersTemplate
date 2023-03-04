@@ -5,7 +5,7 @@
     "password": "$2b$10$Py2tleqvNA.iHa3ENjt6I.40F2NaAL1bxCR80WBb2iX7L5eyIoOX2",
     "name": "Gonzalo ",
     "mail": "poniemangon@gmail.com",
-    "image": "user_image-1677082152918-176318968.png"
+    "image": "user_image-1677860305067-885513283.png"
   },
   {
     "id": 2,
@@ -21,6 +21,70 @@
     "password": "$2b$10$DxBx4xlYuDLMJnswgRLYoOYqocBdfaJUOcbrwRrFxiEv95UbkU43K",
     "name": "abc 123",
     "mail": "abc@123.com",
+    "image": "default.jpg"
+  },
+  {
+    "id": 4,
+    "username": "aaa",
+    "password": "$2b$10$L8Zv.dUgytHiPFILNS2DdOvD8cj2O8xuCXr2UfwFAVI2UPeSfSFO2",
+    "name": "a",
+    "mail": "a",
+    "image": "default.jpg"
+  },
+  {
+    "id": 5,
+    "username": "gonchu",
+    "password": "$2b$10$/h7UbI1uqYfo0eJE9eHYxumV3PKNSYSM5WOweIHu6i2TVmffrwZ1G",
+    "name": "gon",
+    "mail": "zito@gmail.com",
+    "image": "default.jpg"
+  },
+  {
+    "id": 6,
+    "username": "gonpoarg",
+    "password": "$2b$10$wRNGlYipijvBAvscbwEBoOMEp3FHDIT9GEHainNUS0RALMZC7WcUS",
+    "name": "acv",
+    "mail": "coni@gmail.com",
+    "image": "user_image-1677692675322-535559985.png"
+  },
+  {
+    "id": 7,
+    "username": "puta",
+    "password": "$2b$10$gHCFdE4Hd6RWpAdOyPcwb.TaGXsMxhy2qb6/LNtF8jNNGUdF69Spq",
+    "name": "a",
+    "mail": "a@a.com",
+    "image": "default.jpg"
+  },
+  {
+    "id": 8,
+    "username": "gon_15",
+    "password": "$2b$10$kRMY6J87TLhwD4nAZqgujuzV9fIPYlBfco1JHQSxAf0IleOwuFKsS",
+    "name": "re loco re mamado",
+    "mail": "aa@AAA.com",
+    "image": "user_image-1677774752291-228830727.png"
+  },
+  {
+    "id": 9,
+    "username": "chacon",
+    "password": "$2b$10$UcFCSHbtXyqVgvn4NE3YeOCFEH9z1ymXhaaRL0xDfz6RX3X6/cxwK",
+    "name": "chaco",
+    "mail": "chaco@con.com",
+    "image": "default.jpg"
+  },
+  {
+    "id": 10,
+    "username": "trucks",
+    "password": "$2b$10$qmR679rDFSYJfc/RdKqlKe8X4gdbz2BJSBneFnf0oSQM5EdKqJb/2",
+    "name": "trucks",
+    "mail": "t@gmail.com",
+    "image": "default.jpg"
+  },
+  {
+    "id": 11,
+    "username": "gabriel",
+    "password": "$2b$10$w3IfvhXva6eDe/d.Dmru0ugT/IMkd.rxa8SxLWITiIIrFTwhczHm2",
+    "name": "gabo",
+    "mail": "gabo@gmail.com",
     "image": "default.jpg"
   }
 ]
