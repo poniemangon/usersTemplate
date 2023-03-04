@@ -32,7 +32,9 @@ router.get('/logout', usersController.logout);
 router.get('/:id', usersController.getUser);
 router.get('/404', usersController.getUser);
 router.get('/image/:id', usersController.editImage, setUser);
-router.put('/image/:id', upload.single("user_image"), usersController.updateImage, usersController.mySession)
+router.put('/image/:id', upload.single("user_image"), usersController.updateImage, usersController.mySession);
+router.get('/user/:id', usersController.editUser, setUser);
+router.put('/user/:id', usersController.updateUser, usersController.mySession);
 
 
 

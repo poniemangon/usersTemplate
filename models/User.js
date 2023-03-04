@@ -96,6 +96,29 @@ const User = {
         return userBuscado;
        
       },
+      editUser: function (id) {
+        const picUser = this.findAll().find(picUser => picUser.id == id);
+        console.log(picUser);
+        return picUser;
+      },
+        onUserUpdate: function (id, newData) {
+        console.log(newData, 'AAAAAA');
+        const userBuscado = this.findAll().find(userBuscado => userBuscado.id == id);
+        
+        const newHashedPassword = bcrypt.hashSync(newData.password, 10);
+        
+        userBuscado.username = newData.username;
+        userBuscado.password = newHashedPassword;
+        userBuscado.name = newData.name;
+        userBuscado.mail = newData.mail;
+        console.log(userBuscado);
+        this.updateUser(userBuscado, id);
+     
+        
+        
+        return userBuscado;
+       
+      },
 
 
 

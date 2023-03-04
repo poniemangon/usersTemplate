@@ -90,6 +90,30 @@ const controller = {
         return res.redirect("/");}
         else {return res.redirect('back');}
       },
+      editUser: (req, res) => {
+        const id = req.params.id;
+        const picUser = User.editUser(id);
+        return res.render("changeUserForm", { picUser });
+      },
+      updateUser: (req, res) => {
+        const id = req.params.id;
+        const newData = {
+          username: req.body.username.toString(), 
+          password: req.body.password.toString(), 
+          name: req.body.name.toString(), 
+          mail: req.body.mail.toString(),
+        };
+        
+        
+        
+        if (req.body) {
+        User.onUserUpdate(id, newData);
+        const userBuscado = User.getUser(id);
+        req.session.userLogged = userBuscado;
+        
+        return res.redirect("/");}
+        else {return res.redirect('back');}
+      },
       mySession: (req, res) => {
         
       }

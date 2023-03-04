@@ -4,11 +4,15 @@
     <div class="person">
         <% if (user && user.username == userFound.username) { %>
             <p>Estas en tu perfil</p>
+            <a href="/user/<%= user.id%>">Editar</a>
 
             <% } else { %>
         <p>Viendo el perfil de</p>
         <% }  %>
-        <img src="/images/userimages/<%= userFound.image %>" alt="">
+        <div class="imagen">
+            <img src="/images/userimages/<%= userFound.image %>" alt="">
+        </div>
+        
         <p><b><%= userFound.name %></b></p>
         <p><b><%= userFound.mail %></b></p>
        

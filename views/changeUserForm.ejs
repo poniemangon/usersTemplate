@@ -1,0 +1,33 @@
+<%- include('./common/dashboard') %>
+
+  <% if(user && user.id == picUser.id){ %>
+  <div class="formLog">
+    <form action="/user/<%= picUser.id %>?_method=PUT" method="POST" enctype="">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<%= picUser.username%>" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <label for="name">Nname:</label>
+        <input type="text" id="name" name="name" value="<%= picUser.name %>" required>
+      </div>
+      <div>
+        <label for="name">Email:</label>
+        <input type="text" id="mail" name="mail" value="<%= picUser.mail %>" required>
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+    </form>
+  </div>
+  <% } %>
+  
+
+</div>
+</main>
+</body>
+
+</html>
